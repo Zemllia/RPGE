@@ -52,6 +52,15 @@ public class Map {
             }
         }
     }
+
+    void generateVillages(){
+        int counter = 0;
+
+        for (int i = 0; i < villagesCount; i++){
+
+        }
+    }
+
     void viewMapArea (int xPos, int yPos, int radius) {
 
         char[][] renderArray = new char[radius * 2][radius * 2];

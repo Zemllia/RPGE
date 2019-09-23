@@ -1,6 +1,8 @@
-package RPGE;
+package engine;
+
+
 public class GameObject {
-    private Position position;
+    protected Position position;
     private int energy;
     private char mapIcon;
     private String name;

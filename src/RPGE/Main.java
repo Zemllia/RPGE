@@ -26,7 +26,7 @@ public class Main {
         String[] randUnknownCommandPhrases = {": хм, ума не приложу как это сделать, но я могу вот что: ",
                 ": я так не умею :( Кстати, могу так: ", ": возможно мне стоит научиться делать это, но пока я могу только: "};
 
-        Character.Player player = new Character.Player(name);
+        Player player = new Player(name);
         while (true) {
             System.out.println("* Что бы мне сделать? *");
             String command = reader.readLine();
@@ -37,7 +37,7 @@ public class Main {
                     player.moveX(Integer.parseInt(commandArray[1]));
                     map.changePlayerPos(player.getPosX(), player.getPosY(), player.getFOV());
                 } else {
-                    System.out.println(name + ": Какие-то нивидимые силы не дают мне пройти туда");
+                    map.changePlayerPos( 0 + player.getPosX() - 499,  player.getPosY(), player.getFOV());
                 }
             } else if (commandArray[0].equals("влево")) {
                 int newPosX = player.getPosX() - Integer.parseInt(commandArray[1]);
@@ -45,7 +45,7 @@ public class Main {
                     player.moveX(Integer.parseInt(commandArray[1]) * -1);
                     map.changePlayerPos(player.getPosX(), player.getPosY(), player.getFOV());
                 } else {
-                    System.out.println(name + ": Какие-то нивидимые силы не дают мне пройти туда");
+                    map.changePlayerPos(499 + player.getPosX(), player.getPosY(), player.getFOV());
                 }
             } else if (commandArray[0].equals("вверх")) {
                 int newPosY = player.getPosY() + Integer.parseInt(commandArray[1]);
@@ -53,13 +53,13 @@ public class Main {
                     player.moveY(Integer.parseInt(commandArray[1]) * -1);
                     map.changePlayerPos(player.getPosX(), player.getPosY(), player.getFOV());
                 } else {
-                    System.out.println(name + ": Какие-то нивидимые силы не дают мне пройти туда");
+                    map.changePlayerPos(player.getPosX(), 499 + player.getPosY(), player.getFOV());
                 }
             } else if (commandArray[0].equals("вниз")) {
                 int newPosY = player.getPosY() - Integer.parseInt(commandArray[1]);
                 if(newPosY <= 500) {
                     player.moveY(Integer.parseInt(commandArray[1]));
-                    map.changePlayerPos(player.getPosX(), player.getPosY(), player.getFOV());
+                    map.changePlayerPos(player.getPosX(), 0 + player.getPosY() - 499, player.getFOV());
                 } else {
                     System.out.println(name + ": Какие-то нивидимые силы не дают мне пройти туда");
                 }
