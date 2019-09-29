@@ -17,7 +17,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         init();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+
+
+        /*BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Введите свое имя: ");
 
@@ -77,7 +80,7 @@ public class Main {
                 System.out.println(name + randUnknownCommandPhrases[Random.randInt(0, randUnknownCommandPhrases.length - 1)]);
                 printHelp();
             }
-        }
+        }*/
     }
 
     public static void printHelp(){

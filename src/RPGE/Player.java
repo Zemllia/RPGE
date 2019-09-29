@@ -3,6 +3,9 @@ package RPGE;
 import engine.GameObject;
 import engine.Position;
 import utils.Random;
+
+import org.telegram.telegrambots.util.WebhookUtils;
+
 public class Player extends GameObject {
     String name = "Безымянный Скиталец";
     int HP = 100;
